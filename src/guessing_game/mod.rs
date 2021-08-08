@@ -6,6 +6,7 @@ use std::cmp::Ordering;
 /// While the guessed number is incorrect, hints at the user if the guess is too small or big.
 ///
 /// The game finishes when the user guesses correctly.
+#[allow(dead_code)]
 pub fn execute() {
     println!("Guess the number!");
 
