@@ -4,6 +4,7 @@ mod variables;
 mod data_types;
 mod functions;
 mod branches;
+mod loops;
 
 fn main() {
     // hello_world::execute();
@@ -11,5 +12,6 @@ fn main() {
     // variables::execute();
     // data_types::execute();
     // functions::execute();
-    branches::execute();
+    // branches::execute();
+    loops::execute();
 }
