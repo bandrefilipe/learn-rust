@@ -5,6 +5,7 @@ mod data_types;
 mod functions;
 mod branches;
 mod loops;
+mod ownership;
 
 fn main() {
     // hello_world::execute();
@@ -13,5 +14,6 @@ fn main() {
     // data_types::execute();
     // functions::execute();
     // branches::execute();
-    loops::execute();
+    // loops::execute();
+    ownership::execute();
 }
