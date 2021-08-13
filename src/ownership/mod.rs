@@ -3,9 +3,16 @@ pub fn execute() {
     ways_data_and_variables_interact();
     ownership_and_functions();
     return_values_and_scope();
+
     references_and_borrowing();
     mutable_references();
     preventing_data_races();
+
+    string_slices();
+    let hello_world = "hello world";
+    let _hello = first_word(&hello_world);
+    let _hello = first_word(&String::from("hello world"));
+    other_slices();
 }
 
 fn ways_data_and_variables_interact() {
@@ -104,4 +111,35 @@ fn safely_mixing_immutable_and_mutable_references() {
 
     let r3 = &mut s; // no problem
     println!("{}", r3);
+}
+
+fn string_slices() {
+    let s = String::from("hello world");
+
+    let _hello = &s[0..5]; // "hello"
+    let _hello = &s[..5];
+
+    let _world = &s[6..11]; // "world"
+    let _world = &s[6..];
+
+    let _hello_world = &s[0..11]; // "hello world"
+    let _hello_world = &s[..];
+}
+
+fn first_word(s: &str) -> &str {
+    let bytes = s.as_bytes();
+
+    for (index, &character) in bytes.iter().enumerate() {
+        if character == b' ' {
+            return &s[0..index];
+        }
+    }
+
+    &s[..]
+}
+
+fn other_slices() {
+    let a = [1, 2, 3, 4, 5];
+    let slice = &a[1..3]; // [2, 3]
+    assert_eq!(slice, &[2, 3]);
 }
