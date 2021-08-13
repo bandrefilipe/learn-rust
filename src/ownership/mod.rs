@@ -3,6 +3,9 @@ pub fn execute() {
     ways_data_and_variables_interact();
     ownership_and_functions();
     return_values_and_scope();
+    references_and_borrowing();
+    mutable_references();
+    preventing_data_races();
 }
 
 fn ways_data_and_variables_interact() {
@@ -57,4 +60,48 @@ fn gives_ownership() -> String {
 // takes_and_gives_back will take a String and return one
 fn takes_and_gives_back(a_string: String) -> String { // a_string comes into scope
     a_string  // a_string is returned and moves out to the calling function
+}
+
+fn references_and_borrowing() {
+    let s1 = String::from("hello");
+    let len = calculate_length(&s1);
+    println!("The length of '{}' is {}.", s1, len);
+}
+
+fn calculate_length(s: &String) -> usize { // s is a reference to a String
+    s.len()
+} // Here, s goes out of scope. But because it does not have ownership of what it refers to, nothing happens.
+
+fn mutable_references() {
+    let mut s = String::from("hello");
+    change(&mut s);
+}
+
+fn change(some_string: &mut String) {
+    some_string.push_str(", world");
+}
+
+fn preventing_data_races() {
+    using_scope_to_allow_multiple_mutable_references();
+    safely_mixing_immutable_and_mutable_references();
+}
+
+fn using_scope_to_allow_multiple_mutable_references() {
+    let mut s = String::from("hello");
+    {
+        let _r1 = &mut s;
+    } // r1 goes out of scope here, so we can make a new reference with no problem
+    let _r2 = &mut s;
+}
+
+fn safely_mixing_immutable_and_mutable_references() {
+    let mut s = String::from("hello");
+
+    let r1 = &s; // no problem
+    let r2 = &s; // no problem
+    println!("{}, {}", r1, r2);
+    // r1 and r2 are no longer used after this point
+
+    let r3 = &mut s; // no problem
+    println!("{}", r3);
 }
