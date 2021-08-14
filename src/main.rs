@@ -6,6 +6,7 @@ mod functions;
 mod branches;
 mod loops;
 mod ownership;
+mod structs;
 
 fn main() {
     // hello_world::execute();
@@ -15,5 +16,6 @@ fn main() {
     // functions::execute();
     // branches::execute();
     // loops::execute();
-    ownership::execute();
+    // ownership::execute();
+    structs::execute();
 }
