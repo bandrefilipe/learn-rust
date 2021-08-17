@@ -7,6 +7,7 @@ mod branches;
 mod loops;
 mod ownership;
 mod structs;
+mod rectangles;
 
 fn main() {
     // hello_world::execute();
@@ -17,5 +18,6 @@ fn main() {
     // branches::execute();
     // loops::execute();
     // ownership::execute();
-    structs::execute();
+    // structs::execute();
+    rectangles::execute();
 }
