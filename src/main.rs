@@ -8,6 +8,7 @@ mod loops;
 mod ownership;
 mod structs;
 mod rectangles;
+mod enumerations;
 
 fn main() {
     // hello_world::execute();
@@ -19,5 +20,6 @@ fn main() {
     // loops::execute();
     // ownership::execute();
     // structs::execute();
-    rectangles::execute();
+    // rectangles::execute();
+    enumerations::execute();
 }
