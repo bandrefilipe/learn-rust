@@ -9,6 +9,7 @@ mod ownership;
 mod structs;
 mod rectangles;
 mod enumerations;
+mod pattern_matching;
 
 fn main() {
     // hello_world::execute();
@@ -21,5 +22,6 @@ fn main() {
     // ownership::execute();
     // structs::execute();
     // rectangles::execute();
-    enumerations::execute();
+    // enumerations::execute();
+    pattern_matching::execute();
 }
