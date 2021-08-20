@@ -17,12 +17,20 @@ mod front_of_house {
     }
 }
 
+// the use of `pub` keyword here denotes it is being re-exported.
+// meaning the caller module can reference simply `restaurant::hosting::add_to_waitlist()`
+// instead of knowing anything about front our back of house concepts.
+pub use crate::front_of_house::hosting;
+
 pub fn eat_at_restaurant() {
     // absolute path:
     crate::front_of_house::hosting::add_to_waitlist();
 
     // relative path:
     front_of_house::hosting::add_to_waitlist();
+
+    // after bringing hosting into scope with `use`:
+    hosting::add_to_waitlist();
 
     // order a breakfast in the summer with rye toast:
     let mut meal = back_of_house::Breakfast::summer("rye");
