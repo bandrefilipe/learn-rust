@@ -72,6 +72,7 @@ fn iterating_over_the_values_in_a_vector() {
 
 /// Defining an `enum` to store values of different types in one vector.
 fn using_an_enum_to_store_multiple_types() {
+    #[derive(Debug)]
     enum SpreadsheetCell {
         Int(i32),
         Float(f64),
@@ -83,10 +84,6 @@ fn using_an_enum_to_store_multiple_types() {
         SpreadsheetCell::Float(10.12),
     ];
     for cell in &row {
-        match cell {
-            SpreadsheetCell::Int(value) => println!("Int: {}", value),
-            SpreadsheetCell::Float(value) => println!("Float: {}", value),
-            SpreadsheetCell::Text(value) => println!("Text: {}", value),
-        }
+        println!("{:?}", cell);
     }
 }
