@@ -10,6 +10,7 @@ mod structs;
 mod rectangles;
 mod enumerations;
 mod pattern_matching;
+mod collections;
 
 fn main() {
     // hello_world::execute();
@@ -23,5 +24,6 @@ fn main() {
     // structs::execute();
     // rectangles::execute();
     // enumerations::execute();
-    pattern_matching::execute();
+    // pattern_matching::execute();
+    collections::execute();
 }
