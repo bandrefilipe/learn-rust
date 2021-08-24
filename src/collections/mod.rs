@@ -1,7 +1,6 @@
 #[allow(dead_code)]
 pub fn execute() {
     storing_lists_of_values_with_vectors();
-    storing_utf8_encoded_text_with_strings();
 }
 
 fn storing_lists_of_values_with_vectors() {
@@ -11,10 +10,6 @@ fn storing_lists_of_values_with_vectors() {
     reading_elements_of_vectors();
     iterating_over_the_values_in_a_vector();
     using_an_enum_to_store_multiple_types();
-}
-
-fn storing_utf8_encoded_text_with_strings() {
-    todo!();
 }
 
 fn creating_a_new_vector() {
