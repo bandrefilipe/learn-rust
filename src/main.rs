@@ -11,6 +11,7 @@ mod rectangles;
 mod enumerations;
 mod pattern_matching;
 mod collections;
+mod strings;
 
 fn main() {
     // hello_world::execute();
@@ -25,5 +26,6 @@ fn main() {
     // rectangles::execute();
     // enumerations::execute();
     // pattern_matching::execute();
-    collections::execute();
+    // collections::execute();
+    strings::execute();
 }
