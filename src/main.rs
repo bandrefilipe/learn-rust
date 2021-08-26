@@ -12,6 +12,7 @@ mod enumerations;
 mod pattern_matching;
 mod collections;
 mod strings;
+mod hash_maps;
 
 fn main() {
     // hello_world::execute();
@@ -27,5 +28,6 @@ fn main() {
     // enumerations::execute();
     // pattern_matching::execute();
     // collections::execute();
-    strings::execute();
+    // strings::execute();
+    hash_maps::execute();
 }
