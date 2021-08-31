@@ -1,19 +1,20 @@
-mod guessing_game;
-mod hello_world;
-mod variables;
-mod data_types;
-mod functions;
 mod branches;
+mod collections;
+mod data_types;
+mod enumerations;
+mod error_handling;
+mod functions;
+mod generics;
+mod guessing_game;
+mod hash_maps;
+mod hello_world;
 mod loops;
 mod ownership;
-mod structs;
-mod rectangles;
-mod enumerations;
 mod pattern_matching;
-mod collections;
+mod rectangles;
 mod strings;
-mod hash_maps;
-mod error_handling;
+mod structs;
+mod variables;
 
 fn main() {
     // hello_world::execute();
@@ -31,5 +32,6 @@ fn main() {
     // collections::execute();
     // strings::execute();
     // hash_maps::execute();
-    error_handling::execute();
+    // error_handling::execute();
+    generics::execute();
 }
