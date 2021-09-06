@@ -14,6 +14,7 @@ mod pattern_matching;
 mod rectangles;
 mod strings;
 mod structs;
+mod traits;
 mod variables;
 
 fn main() {
@@ -33,5 +34,6 @@ fn main() {
     // strings::execute();
     // hash_maps::execute();
     // error_handling::execute();
-    generics::execute();
+    // generics::execute();
+    traits::execute();
 }

@@ -6,17 +6,33 @@ pub fn execute() {
     in_method_definitions();
 }
 
-fn in_function_definitions() {}
+fn in_function_definitions() {
+    let number_list = vec![34, 50, 25, 100, 65];
+    let result = largest(&number_list);
+    assert_eq!(result, &100);
 
-// fn largest<T>(list: &[T]) -> T {
-//     let mut largest = list[0];
-//     for &item in list {
-//         if item > largest {
-//             largest = item;
-//         }
-//     }
-//     largest
-// }
+    let char_list = vec!['y', 'm', 'a', 'q'];
+    let result = largest(&char_list);
+    assert_eq!(result, &'y');
+
+    let string_list = vec![
+        "test".to_string(),
+        "zebra".to_string(),
+        "helicopter".to_string(),
+    ];
+    let result = largest(&string_list);
+    assert_eq!(result, &"zebra");
+}
+
+fn largest<T: PartialOrd>(list: &[T]) -> &T {
+    let mut largest = &list[0];
+    for item in list {
+        if item > largest {
+            largest = item;
+        }
+    }
+    largest
+}
 
 #[derive(Debug)]
 struct Point<T> {
