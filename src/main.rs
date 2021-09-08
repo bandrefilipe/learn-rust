@@ -8,6 +8,7 @@ mod generics;
 mod guessing_game;
 mod hash_maps;
 mod hello_world;
+mod lifetimes;
 mod loops;
 mod ownership;
 mod pattern_matching;
@@ -35,5 +36,6 @@ fn main() {
     // hash_maps::execute();
     // error_handling::execute();
     // generics::execute();
-    traits::execute();
+    // traits::execute();
+    lifetimes::execute();
 }
