@@ -39,3 +39,24 @@ fn main() {
     // traits::execute();
     lifetimes::execute();
 }
+
+#[cfg(test)]
+mod tests {
+
+    /// Tests that return a [Result] type allow us to use the `?` operator
+    /// which can be convenient if we have multiple operations within the test that
+    /// could return an [Err] type, and we want our test to fail if any Err type is returned.
+    #[test]
+    fn test_returning_result_type() -> Result<(), String> {
+        if two_plus_three() == 4 {
+            Ok(())
+        } else {
+            Err(String::from("two plus three does not equal four"))
+        }
+    }
+
+    fn two_plus_three() -> i32 {
+        // 2 + 3 // commented out so the test above doesn't fail
+        2 + 2
+    }
+}
