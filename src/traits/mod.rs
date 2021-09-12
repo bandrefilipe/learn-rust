@@ -125,3 +125,24 @@ fn using_trait_bounds_to_conditionally_implement_methods() {
     let pair = Pair::new("a", "b");
     pair.cmp_display();
 }
+
+#[cfg(test)]
+mod tests {
+    use super::*;
+
+    #[test]
+    fn summary_contains_author_name() {
+        let article = NewsArticle {
+            headline: "The Headline".to_string(),
+            location: "The Location".to_string(),
+            author: "Author Name".to_string(),
+            content: "The Content".to_string()
+        };
+        let result = article.summarize();
+        assert!(
+            result.contains("Author Name"),
+            "Summary did not contain `Author Name`, value was `{}`",
+            result
+        );
+    }
+}

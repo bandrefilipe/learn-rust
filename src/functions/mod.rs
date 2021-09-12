@@ -25,3 +25,13 @@ fn five() -> i32 {
 fn plus_one(n: i32) -> i32 {
     n + 1
 }
+
+#[cfg(test)]
+mod tests {
+    use super::plus_one;
+
+    #[test]
+    fn four_plus_one_equals_five() {
+        assert_eq!(plus_one(4), 5);
+    }
+}
